@@ -1,7 +1,3 @@
-body {
-    font-family: 'IBM Plex Mono', sans-serif;
-}
-
 /* Header */
 .header {
     display: grid;
@@ -155,8 +151,8 @@ body {
 
 .lots__card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(334px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(334px, 334px));
+    gap: 49px;
     justify-content: center;
     list-style: none;
     margin-bottom: 30px;
