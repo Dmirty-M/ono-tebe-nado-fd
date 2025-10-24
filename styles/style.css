@@ -1,43 +1,14 @@
-*,
-*::before,
-*::after {
+/* Reset-ish базовые правки (только то, что нужно) */
+* {
     box-sizing: border-box;
 }
 
-html {
-    height: 100%;
-}
-
+html,
 body {
     margin: 0;
-    height: 100%;
-    color: #000;
-    font-family: Raleway, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-blockquote {
-    margin: 0;
     padding: 0;
-}
-
-a {
+    font-family: inherit;
     color: inherit;
-    text-decoration: none;
-}
-
-img {
-    width: 100%;
-    height: auto;
 }
 
 /* Header */
@@ -49,6 +20,7 @@ img {
     font-size: 18px;
 }
 
+/* Навигация слева */
 .header__menu {
     justify-self: start;
 }
@@ -57,40 +29,57 @@ img {
     display: flex;
     gap: 32px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .header__links-list-item {
-    list-style: circle;
+    margin: 0;
 }
 
-.header__links-list-item_no-bullit {
-    list-style: none;
-}
-
+/* Ссылки */
 .header__link {
     border-bottom: 1px solid currentColor;
     text-decoration: none;
+    color: inherit;
+    padding-bottom: 2px;
 }
 
-.header__link_active {
+.header__link:focus,
+.header__link:focus-visible,
+.bet-button:focus,
+.footer__menu-link:focus,
+.lots__look-more-link:focus {
+    outline: 3px solid rgba(0, 0, 0, 0.15);
+    outline-offset: 3px;
+}
+
+.header__link_active,
+.header__link[aria-current="page"] {
     border-bottom: none;
 }
 
+/* Центрируем логотип в гриде */
 .header__logo {
     display: block;
     width: 148px;
     height: 105px;
+    justify-self: center;
+    text-decoration: none;
 }
 
 .header__logo-image {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
+/* Контакты справа */
 .address {
     font-style: normal;
     line-height: 1.35;
     max-width: 240px;
+    margin: 0;
 }
 
 .header__address {
@@ -111,13 +100,15 @@ img {
     min-height: 757px;
 }
 
-.overlay {
+/* Специфичные overlay чтобы не конфликтовать с карточками */
+.cover__overlay {
     position: absolute;
     inset: 0;
-    background-color: rgb(0 0 0 / 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
+/* Заголовок на обложке */
 .cover__title {
     position: relative;
     z-index: 2;
@@ -126,7 +117,7 @@ img {
     text-transform: uppercase;
     line-height: 1.15;
     letter-spacing: 0.3em;
-    margin-bottom: 135px;
+    margin: 0 0 135px 0;
 }
 
 .aligned-text {
@@ -154,6 +145,7 @@ img {
     letter-spacing: 0;
 }
 
+/* Описание и кнопка на обложке */
 .cover__description {
     position: relative;
     z-index: 2;
@@ -167,6 +159,7 @@ img {
     font-size: 22px;
     text-transform: uppercase;
     word-spacing: 18px;
+    margin: 0;
 }
 
 .bet-button {
@@ -177,6 +170,7 @@ img {
     text-transform: uppercase;
     background: transparent;
     cursor: pointer;
+    line-height: 1;
 }
 
 /* Lots */
@@ -191,13 +185,15 @@ img {
     margin-left: 40px;
 }
 
+/* Сетка карточек */
 .lots__card-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(334px, 334px));
-    gap: 25px;
+    gap: 49px;
     justify-content: center;
     list-style: none;
-    margin-bottom: 30px;
+    margin: 0 0 30px 0;
+    padding: 0;
 }
 
 .lots__card-list-item {
@@ -208,8 +204,10 @@ img {
     display: block;
     height: 100%;
     text-decoration: none;
+    color: inherit;
 }
 
+/* Карточки */
 .card {
     position: relative;
     display: flex;
@@ -220,8 +218,18 @@ img {
     color: #fff;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
+/* overlay карточки — отдельный селектор */
+.card__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* фоновые изображения карточек */
 .card_type_film {
     background-image: url(../images/card-lot-01.jpg);
 }
@@ -241,15 +249,18 @@ img {
     text-transform: uppercase;
     text-decoration: underline;
     text-underline-offset: 3px;
+    margin: 0 0 12px 0;
 }
 
 .card__text {
     position: relative;
     z-index: 2;
     font-size: 20px;
+    margin: 0;
 }
 
 .lots__look-more-link {
+    display: inline-block;
     margin-left: 40px;
     font-size: 20px;
     border-bottom: 1px solid currentColor;
@@ -324,14 +335,18 @@ img {
     align-items: center;
     gap: 10px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer__menu-link {
     border-bottom: 1px solid currentColor;
     text-decoration: none;
+    color: inherit;
 }
 
-.footer__menu-link_active {
+.footer__menu-link_active,
+.footer__menu-link[aria-current="page"] {
     border-bottom: none;
 }
 
@@ -340,6 +355,8 @@ img {
     gap: 48px;
     justify-self: end;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .footer__social-link {
@@ -351,6 +368,7 @@ img {
 .footer__social-icon {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 /* Adaptive */
