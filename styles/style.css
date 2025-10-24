@@ -1,14 +1,9 @@
-/* Reset-ish базовые правки (только то, что нужно) */
-* {
-    box-sizing: border-box;
-}
-
-html,
 body {
+    font-family: 'Raleway';
     margin: 0;
     padding: 0;
-    font-family: inherit;
-    color: inherit;
+    font-size: 18px;
+    background-color: #fff;
 }
 
 /* Header */
@@ -17,10 +12,8 @@ body {
     grid-template-columns: 1fr min-content 1fr;
     align-items: center;
     padding: 92px 50px;
-    font-size: 18px;
 }
 
-/* Навигация слева */
 .header__menu {
     justify-self: start;
 }
@@ -34,58 +27,43 @@ body {
 }
 
 .header__links-list-item {
-    margin: 0;
+    list-style: circle;
 }
 
-/* Ссылки */
+.header__links-list-item_no-bullit {
+    list-style: none;
+}
+
 .header__link {
-    border-bottom: 1px solid currentColor;
     text-decoration: none;
-    color: inherit;
-    padding-bottom: 2px;
+    border-bottom: 1px solid currentColor;
+    text-transform: lowercase;
+    color: #000;
 }
 
-.header__link:focus,
-.header__link:focus-visible,
-.bet-button:focus,
-.footer__menu-link:focus,
-.lots__look-more-link:focus {
-    outline: 3px solid rgba(0, 0, 0, 0.15);
-    outline-offset: 3px;
-}
-
-.header__link_active,
-.header__link[aria-current="page"] {
+.header__link_active {
     border-bottom: none;
 }
 
-/* Центрируем логотип в гриде */
 .header__logo {
     display: block;
     width: 148px;
     height: 105px;
     justify-self: center;
-    text-decoration: none;
 }
 
 .header__logo-image {
     width: 100%;
     height: 100%;
-    display: block;
 }
 
-/* Контакты справа */
 .address {
     font-style: normal;
     line-height: 1.35;
     max-width: 240px;
-    margin: 0;
 }
 
 .header__address {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     justify-self: end;
 }
 
@@ -93,31 +71,29 @@ body {
 .cover {
     position: relative;
     padding: 165px 50px 50px;
-    background-image: url(../images/cover.jpg);
-    background-position: center;
-    background-size: cover;
-    color: #fff;
     min-height: 757px;
+    background-image: url(../images/cover.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
 }
 
-/* Специфичные overlay чтобы не конфликтовать с карточками */
-.cover__overlay {
+.overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgb(0 0 0 / 0.6);
     z-index: 1;
 }
 
-/* Заголовок на обложке */
 .cover__title {
     position: relative;
     z-index: 2;
-    font-size: 100px;
     font-weight: 700;
+    font-size: 100px;
     text-transform: uppercase;
     line-height: 1.15;
     letter-spacing: 0.3em;
-    margin: 0 0 135px 0;
+    margin: 0 0 135px;
 }
 
 .aligned-text {
@@ -145,7 +121,6 @@ body {
     letter-spacing: 0;
 }
 
-/* Описание и кнопка на обложке */
 .cover__description {
     position: relative;
     z-index: 2;
@@ -159,18 +134,16 @@ body {
     font-size: 22px;
     text-transform: uppercase;
     word-spacing: 18px;
-    margin: 0;
 }
 
 .bet-button {
     padding: 12px 32px;
     border: 1px solid #fff;
+    background: transparent;
     color: #fff;
     font-size: 22px;
     text-transform: uppercase;
-    background: transparent;
     cursor: pointer;
-    line-height: 1;
 }
 
 /* Lots */
@@ -181,18 +154,16 @@ body {
 .lots__heading {
     font-size: 40px;
     text-transform: uppercase;
-    margin-bottom: 27px;
-    margin-left: 40px;
+    margin: 0 0 27px 40px;
 }
 
-/* Сетка карточек */
 .lots__card-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(334px, 334px));
     gap: 49px;
     justify-content: center;
     list-style: none;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px;
     padding: 0;
 }
 
@@ -204,10 +175,8 @@ body {
     display: block;
     height: 100%;
     text-decoration: none;
-    color: inherit;
 }
 
-/* Карточки */
 .card {
     position: relative;
     display: flex;
@@ -218,18 +187,8 @@ body {
     color: #fff;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 }
 
-/* overlay карточки — отдельный селектор */
-.card__overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    z-index: 1;
-}
-
-/* фоновые изображения карточек */
 .card_type_film {
     background-image: url(../images/card-lot-01.jpg);
 }
@@ -249,22 +208,20 @@ body {
     text-transform: uppercase;
     text-decoration: underline;
     text-underline-offset: 3px;
-    margin: 0 0 12px 0;
 }
 
 .card__text {
     position: relative;
     z-index: 2;
     font-size: 20px;
-    margin: 0;
 }
 
 .lots__look-more-link {
-    display: inline-block;
     margin-left: 40px;
     font-size: 20px;
     border-bottom: 1px solid currentColor;
     text-decoration: none;
+    color: #000;
 }
 
 /* About */
@@ -277,21 +234,15 @@ body {
     max-width: 1050px;
 }
 
-.about__column {
-    display: flex;
-    flex-direction: column;
-}
-
 .about__logo {
     width: 240px;
     height: 240px;
     background-color: #000;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 35px;
-    margin-left: 47px;
+    justify-content: center;
+    margin: 35px 0 0 47px;
 }
 
 .about__logo-image {
@@ -302,8 +253,7 @@ body {
 .about__title {
     font-size: 40px;
     text-transform: uppercase;
-    margin-top: 35px;
-    margin-bottom: 100px;
+    margin: 35px 0 100px;
 }
 
 .about__text {
@@ -318,7 +268,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 180px 50px 88px;
-    font-size: 18px;
 }
 
 .footer .address {
@@ -330,33 +279,32 @@ body {
 }
 
 .footer__menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .footer__menu-link {
-    border-bottom: 1px solid currentColor;
     text-decoration: none;
-    color: inherit;
+    border-bottom: 1px solid currentColor;
+    color: #000;
 }
 
-.footer__menu-link_active,
-.footer__menu-link[aria-current="page"] {
+.footer__menu-link_active {
     border-bottom: none;
 }
 
 .footer__social-list {
     display: flex;
     gap: 48px;
-    justify-self: end;
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-self: end;
 }
 
 .footer__social-link {
@@ -368,7 +316,6 @@ body {
 .footer__social-icon {
     width: 100%;
     height: 100%;
-    display: block;
 }
 
 /* Adaptive */
@@ -404,8 +351,7 @@ body {
     }
 
     .about__logo {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 35px auto 0;
     }
 
     .about__title {
