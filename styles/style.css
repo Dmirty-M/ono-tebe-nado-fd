@@ -4,7 +4,8 @@
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   padding: 92px 50px;
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -78,7 +79,6 @@
 
 .address_header {
   justify-self: end;
-  
 }
 
 .address_footer {
@@ -97,7 +97,8 @@
 /* Cover */
 .cover {
   position: relative;
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   min-height: 757px;
   margin: 0 auto;
   padding: 165px 50px 50px;
@@ -180,7 +181,8 @@
 
 /* Lots */
 .lots {
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   margin: 180px auto;
   padding: 0 50px;
 }
@@ -189,6 +191,7 @@
   font-family: "Raleway", Arial, sans-serif;
   font-size: 40px;
   font-weight: 700;
+  line-height: 47px;
   text-transform: uppercase;
   color: #000;
   margin: 0 0 27px 40px;
@@ -216,15 +219,18 @@
 
 .card {
   position: relative;
-  width: 100%;
-  min-height: 563px;
-  padding: 50px 40px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #fff;
+    width: 100%;
+    min-height: 596px;
+    /* точная высота карточки из макета */
+    padding: 48px 40px;
+    /* внутренние отступы как в фигме */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: #fff;
 }
 
 .card_type_film {
@@ -248,6 +254,7 @@
   text-transform: uppercase;
   margin: 0;
   z-index: 1;
+  max-width: 254px;
 }
 
 .card__text {
@@ -257,12 +264,19 @@
   line-height: 1.2;
   margin: 0;
   z-index: 1;
+  max-width: 254px;
+}
+
+.card__title,
+.card__text {
+  text-align: left;
 }
 
 .lots__look-more-link {
   font-family: "Raleway", Arial, sans-serif;
   font-size: 20px;
   font-weight: 400;
+  line-height: 23px;
   color: #000;
   text-decoration: underline;
   margin-left: 40px;
@@ -270,7 +284,8 @@
 
 /* About */
 .about {
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   margin: 181px auto;
   padding: 0 50px;
   display: grid;
@@ -327,7 +342,8 @@
 
 /* Footer */
 .footer {
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   margin: 180px auto 90px;
   padding: 0 50px;
   display: grid;
