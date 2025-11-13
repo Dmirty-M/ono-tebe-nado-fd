@@ -15,8 +15,7 @@
 
 .header__links-list {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 6px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -56,7 +55,7 @@
   line-height: 1.35;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  margin: 0 34px;
 }
 
 .address_header {
@@ -82,8 +81,7 @@
   width: 100%;
   min-height: 757px;
   margin: 0 auto;
-  padding: 165px 0 50px;
-  display: flex;
+    display: flex;
   flex-direction: column;
   justify-content: space-between;
   background:
@@ -100,29 +98,31 @@
   letter-spacing: 30px;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 135px 0;
-}
+  }
 
 .aligned-text {
   display: block;
 }
 
 .aligned-text_left {
-  text-align: left;
+    margin: 56px 0px 0px -8px;
 }
 
 .aligned-text_center {
   text-align: center;
+  margin: 17px  0px 0px 40px;
 }
 
 .aligned-text_right {
   text-align: right;
+  margin: 0px 100x -32px 0px;
 }
 
 .cover__description {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 40px;
 }
 
 .cover__description-text {
@@ -157,7 +157,7 @@
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 0 27px 0;
+  margin: 0 0 30px 8px;
 }
 
 .lots__card-list {
@@ -165,7 +165,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   list-style: none;
-  margin: 0 0 30px 0;
+  margin: 0 0 18px 0;
   padding: 0;
 }
 
@@ -185,7 +185,7 @@ position: absolute;
   position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 596px;
+    min-height: 500px;
     padding: 48px 40px;
     background-size: cover;
     background-position: center;
@@ -244,6 +244,7 @@ position: absolute;
   font-size: 20px;
   color: #000;
   text-decoration: underline;
+  margin: 0px 0px 0px 7px;
 }
 
 /* ====== ABOUT ====== */
@@ -253,7 +254,7 @@ position: absolute;
   margin: 181px auto;
   padding: 0;
   display: grid;
-  grid-template-columns: 430px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 25px;
 }
 
@@ -270,7 +271,7 @@ position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: -31px 0px 0px 15px;
 }
 
 .about__logo-image {
@@ -283,7 +284,7 @@ position: absolute;
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 100px 0;
+  margin: 70px 0 100px;
 }
 
 .about__text {
@@ -303,7 +304,7 @@ position: absolute;
 .footer {
   max-width: min(1100px, 100% - 100px);
   width: 100%;
-  margin: 180px auto 90px;
+  margin: 0 50px 0;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
